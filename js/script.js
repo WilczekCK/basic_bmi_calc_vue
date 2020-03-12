@@ -1,8 +1,11 @@
 new Vue({
-    el:'#app',
+    el:'.vue-app',
     data: function (){
         return{
-            startText: 'Hello Vue!'
+            resultText: 'Waiting for your input',
+            weight: 60,
+            height: 170,
+            gender:undefined,
         }
     }
 })

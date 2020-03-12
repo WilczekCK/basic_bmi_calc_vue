@@ -1,50 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
     <title>VueJS - BMI Calculator</title>
 </head>
+
 <body>
-    <section class="hero is-info is-fullheight">
-        <div class="hero-body">
-          <div class="container is-half">
-            <h1 class="title">
-              Check your BMI
-            </h1>
-            <h2 class="subtitle">
-              Just fill the form near this text
-            </h2>
-          </div>
+    <section class="hero is-info is-fullheight vue-app">
+        <div class="hero-body is-one-fifth">
+            <div class="container">
+                <h1 class="title">
+                    Check your BMI
+                </h1>
+                <h2 class="subtitle">
+                    {{resultText}}
+                </h2>
+            </div>
 
-          <div class="container is-half">
-            <div class="columns">
-                <div class="column is-half">
-                    <p class="subtitle is-5">Are you women or men?</p>
-                    <label class="radio">
-                    <input type="radio" name="gender" value="women">
-                    Women
-                    </label>
-                    <label class="radio">
-                    <input type="radio" name="gender" value="men">
-                    Men
-                    </label>
-                </div>
+            <div class="container is-four-fifths">
+                <div class="columns">
+                    <div class="column is-one-third">
+                        <p class="subtitle is-5">Are you women or men?</p>
+                        <label class="radio">
+                            <input type="radio" name="gender" value="women">
+                            Women
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="gender" value="men">
+                            Men
+                        </label>
+                    </div>
 
-                <div class="column is-half">
-                    <p class="subtitle is-5">How about yours weight?</p>
-                    <label class="radio">
-                        <input type="range" name="weight">
-                    </label>
+                    <div class="column is-one-third">
+                        <p class="subtitle is-5">How about yours weight?</p>
+                        <label class="radio">
+                            <input type="range" name="weight" v-model="weight" min="4" max="150">
+                            <br>{{weight}}
+                        </label>
+                    </div>
+
+
+                    <div class="column is-one-third">
+                        <p class="subtitle is-5">How about yours height?</p>
+                        <label class="radio">
+                            <input type="range" name="height" v-model="height" min="150" max="250">
+                            <br>{{height}}
+                        </label>
+                    </div>
                 </div>
-              </div>
-          </div>
+            </div>
         </div>
-      </section>
+        </div>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

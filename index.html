@@ -37,7 +37,7 @@
                     <div class="column is-one-third">
                         <p class="subtitle is-5">How about yours weight?</p>
                         <label class="radio">
-                            <input type="range" name="weight" v-model="weight" min="4" max="150">
+                            <input type="range" name="weight" v-model.number="weight" min="4" max="150">
                             <br>{{weight}}
                         </label>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="column is-one-third">
                         <p class="subtitle is-5">How about yours height?</p>
                         <label class="radio">
-                            <input type="range" name="height" v-model="height" min="150" max="250">
+                            <input type="range" name="height" v-model.number="height" min="150" max="250">
                             <br>{{height}}
                         </label>
                     </div>

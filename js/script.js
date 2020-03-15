@@ -14,25 +14,50 @@ var vueApp = new Vue({
             if(this.gender) this.calcBMI();
             else this.resultText = 'Please select a gender!'
         },
-        setText: function(results){
-            console.log(results)
+        setResultText: function(results){
+            this.resultText = results.heading;
         },
         calcBMI: function(){
             var calculation = this.weight / Math.pow(this.height, 2);
             this.bmiGrade = Math.round(calculation * 10000)
-            
-            // == STATUSES ==
-                // 1 - Starvation
-                // 2 - Emaciation
-                // 3 - Underweight
-                // 4 - Proper
-                // 5 - Overweight
-                // 6 - 1 Degree of obesity
         }
     },
     watch: {
-        bmiGrade: function(oldGrade){
-            this.setText(oldGrade)
+        bmiGrade: function(incomingGrade){
+            var results = {
+                heading: '',
+                content: '',
+                color: ''
+            }
+
+            if(incomingGrade < 16){
+                results.heading = 'Starvantion'
+                results.content = 'You are really skinny!'
+            }else if(incomingGrade < 17){
+                results.heading = 'Emaciation'
+                results.content = 'You are really skinny!' 
+            }else if(incomingGrade < 19){
+                results.heading = 'Underweight'
+                results.content = 'You are really skinny!' 
+            }else if(incomingGrade < 25){
+                results.heading = 'Proper'
+                results.content = 'You are really skinny!' 
+            }else if(incomingGrade < 30){
+                results.heading = 'Overweight'
+                results.content = 'You are really skinny!' 
+            }else if(incomingGrade < 35){
+                results.heading = '1 Degree of obesity'
+                results.content = 'You are really skinny!' 
+            }else if(incomingGrade < 40){
+                results.heading = '2 Degree of obesity'
+                results.content = 'You are really skinny!' 
+            }else{
+                results.heading = 'Extreme Obesity'
+                results.content = 'You are really skinny!'
+            }
+
+
+            this.setResultText(results)
         }
     }
 })

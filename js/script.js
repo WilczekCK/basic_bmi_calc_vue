@@ -17,6 +17,9 @@ var vueApp = new Vue({
         setResultText: function(results){
             this.resultText = results.heading;
         },
+        setBackground: function(results){
+
+        },
         calcBMI: function(){
             var calculation = this.weight / Math.pow(this.height, 2);
             this.bmiGrade = Math.round(calculation * 10000)

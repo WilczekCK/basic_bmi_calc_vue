@@ -1,0 +1,12 @@
+.bmiResult{
+    width:315px;
+}
+
+.bmiSettings{
+    max-width:1240px;
+    margin:0 auto;
+}
+
+label.radio:hover{
+    color:inherit !important;
+}

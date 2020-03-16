@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>VueJS - BMI Calculator</title>
 </head>
 
 <body>
     <section v-bind:class='[bmiGradeColor]' class="hero is-fullheight vue-app">
-        <div class="hero-body is-one-fifth">
-            <div class="container">
+        <div class="hero-body">
+            <div class="container bmiResult">
                 <h1 class="title">
                     {{resultHeading}}
                 </h1>
@@ -20,7 +21,7 @@
                 </h2>
             </div>
 
-            <div class="container is-four-fifths">
+            <div class="container bmiSettings">
                 <div class="columns">
                     <div class="column is-one-third">
                         <p class="subtitle is-5">Are you women or men?</p>
@@ -38,7 +39,7 @@
                         <p class="subtitle is-5">How about yours weight?</p>
                         <label class="radio">
                             <input type="range" name="weight" v-model.number="weight" min="4" max="150">
-                            <br>{{weight}}
+                            <p>{{weight}}</p>
                         </label>
                     </div>
 
@@ -47,7 +48,7 @@
                         <p class="subtitle is-5">How about yours height?</p>
                         <label class="radio">
                             <input type="range" name="height" v-model.number="height" min="150" max="250">
-                            <br>{{height}}
+                            <p>{{height}}</p>
                         </label>
                     </div>
                 </div>

@@ -12,10 +12,6 @@ var vueApp = new Vue({
         }
     },
     methods: {
-        triggeredControls: function () {
-            if(this.gender) this.calcBMI();
-            else this.resultText = 'Please select a gender!'
-        },
         setResultText: function(results){
             this.resultHeading = results.heading;
             this.resultText = results.content;
@@ -29,6 +25,14 @@ var vueApp = new Vue({
         }
     },
     watch: {
+        weight: function(){
+            if(this.gender) this.calcBMI()
+            else this.resultText = 'Please select a gender!'
+        },
+        height: function(){
+            if(this.gender) this.calcBMI()
+            else this.resultText = 'Please select a gender!'
+        },
         bmiGrade: function(incomingGrade){
             var results = {
                 heading: '',

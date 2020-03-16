@@ -25,11 +25,11 @@
                     <div class="column is-one-third">
                         <p class="subtitle is-5">Are you women or men?</p>
                         <label class="radio">
-                            <input type="radio" name="gender" value="women" v-model="gender" v-on:click="triggeredControls()">
+                            <input type="radio" name="gender" value="women" v-model="gender">
                             Women
                         </label>
                         <label class="radio">
-                            <input type="radio" name="gender" value="men" v-model="gender" v-on:click="triggeredControls()">
+                            <input type="radio" name="gender" value="men" v-model="gender">
                             Men
                         </label>
                     </div>
@@ -37,7 +37,7 @@
                     <div class="column is-one-third">
                         <p class="subtitle is-5">How about yours weight?</p>
                         <label class="radio">
-                            <input type="range" name="weight" v-model.number="weight" min="4" max="150" v-on:click="triggeredControls()">
+                            <input type="range" name="weight" v-model.number="weight" min="4" max="150">
                             <br>{{weight}}
                         </label>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="column is-one-third">
                         <p class="subtitle is-5">How about yours height?</p>
                         <label class="radio">
-                            <input type="range" name="height" v-model.number="height" min="150" max="250" v-on:click="triggeredControls()">
+                            <input type="range" name="height" v-model.number="height" min="150" max="250">
                             <br>{{height}}
                         </label>
                     </div>

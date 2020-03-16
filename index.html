@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <section class="hero is-info is-fullheight vue-app">
+    <section v-bind:class='[bmiGradeColor]' class="hero is-fullheight vue-app">
         <div class="hero-body is-one-fifth">
             <div class="container">
                 <h1 class="title">
-                    Check your BMI
+                    {{resultHeading}}
                 </h1>
                 <h2 class="subtitle">
                     {{resultText}}

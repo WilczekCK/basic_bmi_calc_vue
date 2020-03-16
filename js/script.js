@@ -3,6 +3,8 @@ var vueApp = new Vue({
     data: function () {
         return {
             resultText: 'Waiting for your input',
+            resultHeading: 'Check your BMI',
+            bmiGradeColor: 'is-info',
             bmiGrade: 0,
             weight: 60,
             height: 170,
@@ -15,10 +17,11 @@ var vueApp = new Vue({
             else this.resultText = 'Please select a gender!'
         },
         setResultText: function(results){
-            this.resultText = results.heading;
+            this.resultHeading = results.heading;
+            this.resultText = results.content;
         },
         setBackground: function(results){
-
+            this.bmiGradeColor = results.color;
         },
         calcBMI: function(){
             var calculation = this.weight / Math.pow(this.height, 2);
@@ -35,32 +38,41 @@ var vueApp = new Vue({
 
             if(incomingGrade < 16){
                 results.heading = 'Starvantion'
-                results.content = 'You are really skinny!'
+                results.content = 'Your body starts to shut down!'
+                results.color = 'is-dark';
             }else if(incomingGrade < 17){
                 results.heading = 'Emaciation'
                 results.content = 'You are really skinny!' 
+                results.color = 'is-danger';
             }else if(incomingGrade < 19){
                 results.heading = 'Underweight'
-                results.content = 'You are really skinny!' 
+                results.content = 'You are lightly skinny!' 
+                results.color = 'is-primary';
             }else if(incomingGrade < 25){
                 results.heading = 'Proper'
-                results.content = 'You are really skinny!' 
+                results.content = 'Keep it up! Your weight is correct!' 
+                results.color = 'is-success';
             }else if(incomingGrade < 30){
                 results.heading = 'Overweight'
-                results.content = 'You are really skinny!' 
+                results.content = 'You are lightly obese!' 
+                results.color = 'is-warning';
             }else if(incomingGrade < 35){
                 results.heading = '1 Degree of obesity'
-                results.content = 'You are really skinny!' 
+                results.content = 'You are really obese!' 
+                results.color = 'is-danger';
             }else if(incomingGrade < 40){
                 results.heading = '2 Degree of obesity'
-                results.content = 'You are really skinny!' 
+                results.content = 'You are strongly obese!' 
+                results.color = 'is.danger';
             }else{
                 results.heading = 'Extreme Obesity'
-                results.content = 'You are really skinny!'
+                results.content = 'You are extremly obese!'
+                results.color = 'is.dark';
             }
 
 
             this.setResultText(results)
+            this.setBackground(results)
         }
     }
 })
